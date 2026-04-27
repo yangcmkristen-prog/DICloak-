@@ -1,0 +1,12 @@
+﻿body{font-family:Arial,微软雅黑;margin:0;background:#f5f7fb}
+header{background:#fff;padding:12px 16px;border-bottom:1px solid #ddd}
+.layout{display:grid;grid-template-columns:320px 1fr;gap:12px;padding:12px}
+aside,main{background:#fff;border:1px solid #ddd;border-radius:10px;padding:12px}
+textarea,input,button{width:100%;margin:6px 0;padding:8px;border:1px solid #ddd;border-radius:8px}
+button{background:#2563eb;color:#fff;border:none;cursor:pointer}
+#history{min-height:220px;border:1px solid #eee;border-radius:8px;padding:8px;margin-bottom:8px}
+.msg{padding:8px;border-radius:8px;margin:6px 0;white-space:pre-wrap}
+.user{background:#dbeafe}
+.bot{background:#f3f4f6}
+.reply{border:1px dashed #bbb;padding:8px;border-radius:8px;margin:6px 0;cursor:pointer}
+#toast{position:fixed;right:20px;bottom:20px;background:#111;color:#fff;padding:8px 12px;border-radius:8px;display:none}

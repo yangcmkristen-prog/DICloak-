@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DICloak客服助手</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header><h1>DICloak客服助手</h1></header>
+
+  <div class="layout">
+    <aside>
+      <button id="newChat">+ 新建对话</button>
+      <ul id="chatList"></ul>
+      <hr />
+      <h3>知识库及prompt</h3>
+      <textarea id="prompt" rows="6"></textarea>
+      <input type="file" id="faq" accept=".xlsx,.xls" />
+      <input type="file" id="feature" accept=".xlsx,.xls" />
+      <input type="file" id="term" accept=".xlsx,.xls" />
+      <div id="kbInfo"></div>
+    </aside>
+
+    <main>
+      <div id="history"></div>
+      <textarea id="question" rows="3" placeholder="输入客户问题..."></textarea>
+      <button id="gen">生成</button>
+      <h3>推荐回复（点击复制）</h3>
+      <div id="replies"></div>
+    </main>
+  </div>
+
+  <div id="toast">已复制</div>
+  <script src="app.js"></script>
+</body>
+</html>
