@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState } from "react";
 import { ChatArea } from "@/components/chat-area";
 import { ConversationList } from "@/components/conversation-list";
@@ -8,7 +8,7 @@ import { Conversation } from "@/lib/types";
 import { DEFAULT_SYSTEM_PROMPT, loadConversations, loadCurrentConversationId, loadKnowledgeBase, loadSystemPrompt, saveConversations, saveCurrentConversationId, saveKnowledgeBase, saveSystemPrompt } from "@/lib/store";
 import { Toaster } from "sonner";
 
-const mk = (name="新对话"): Conversation => ({ id: Math.random().toString(36).slice(2,10), name, messages: [], createdAt: Date.now(), updatedAt: Date.now() });
+const mk = (name="鏂板璇?): Conversation => ({ id: Math.random().toString(36).slice(2,10), name, messages: [], createdAt: Date.now(), updatedAt: Date.now() });
 
 export default function HomePage() {
   const [tab,setTab] = useState<"chat"|"knowledge">("chat");
@@ -18,7 +18,7 @@ export default function HomePage() {
   const [systemPrompt,setSystemPrompt] = useState(DEFAULT_SYSTEM_PROMPT);
   const [loading,setLoading] = useState(false);
 
-  useEffect(()=>{ const cs=loadConversations(); const init=cs.length?cs:[mk("默认对话")]; setConversations(init); setCurrentId(loadCurrentConversationId() || init[0].id); setKnowledge(loadKnowledgeBase()); setSystemPrompt(loadSystemPrompt()); },[]);
+  useEffect(()=>{ const cs=loadConversations(); const init=cs.length?cs:[mk("榛樿瀵硅瘽")]; setConversations(init); setCurrentId(loadCurrentConversationId() || init[0].id); setKnowledge(loadKnowledgeBase()); setSystemPrompt(loadSystemPrompt()); },[]);
   useEffect(()=>{ if(conversations.length) saveConversations(conversations); },[conversations]);
   useEffect(()=>{ if(currentId) saveCurrentConversationId(currentId); },[currentId]);
   useEffect(()=>{ saveSystemPrompt(systemPrompt); },[systemPrompt]);
@@ -41,14 +41,14 @@ export default function HomePage() {
   if(!knowledge) return null;
   return <div className="app-shell">
     <Toaster position="top-right" />
-    <header className="topbar"><h1>DICloak 客服助手</h1><span className="badge">内部版</span></header>
+    <header className="topbar"><h1>DICloak 瀹㈡湇鍔╂墜</h1><span className="badge">鍐呴儴鐗?/span></header>
     <div className="content-grid">
       <ConversationList conversations={conversations} currentId={currentId} onSelect={setCurrentId}
         onCreate={()=>{const c=mk(); setConversations(p=>[c,...p]); setCurrentId(c.id);}}
-        onRename={(id)=>{const n=prompt("新名称",""); if(!n) return; setConversations(p=>p.map(c=>c.id===id?{...c,name:n}:c));}}
+        onRename={(id)=>{const n=prompt("鏂板悕绉?,""); if(!n) return; setConversations(p=>p.map(c=>c.id===id?{...c,name:n}:c));}}
         onDelete={(id)=>{const next=conversations.filter(c=>c.id!==id); if(next.length){setConversations(next); if(currentId===id) setCurrentId(next[0].id);} }} />
       <main className="main-panel">
-        <div className="tabs"><button className={tab==="chat"?"active":""} onClick={()=>setTab("chat")}>对话助手</button><button className={tab==="knowledge"?"active":""} onClick={()=>setTab("knowledge")}>知识库</button></div>
+        <div className="tabs"><button className={tab==="chat"?"active":""} onClick={()=>setTab("chat")}>瀵硅瘽鍔╂墜</button><button className={tab==="knowledge"?"active":""} onClick={()=>setTab("knowledge")}>鐭ヨ瘑搴?/button></div>
         {tab==="chat" && current ? <ChatArea messages={current.messages as any} loading={loading} onSend={send} /> :
           <KnowledgeManager prompt={systemPrompt} knowledge={knowledge} onPromptChange={setSystemPrompt} onUpload={async f=>{const n=await parseKnowledgeWorkbook(f,knowledge); setKnowledge(n); saveKnowledgeBase(n);}} />}
       </main>

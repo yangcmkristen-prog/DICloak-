@@ -1,12 +1,12 @@
-﻿import { NextRequest } from "next/server";
+import { NextRequest } from "next/server";
 export const runtime = "nodejs";
 
 function sse(data: string) { return `data: ${JSON.stringify({ chunk: data })}\n\n`; }
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const q = body?.message || "未提供问题";
-  const text = `问题类型：咨询\n\n回复1：您好，关于“${q}”我们已收到。\n\n回复2：已按知识库检索，请先按流程排查。\n\n回复3：如仍异常，请补充截图和账号角色。`;
+  const q = body?.message || "鏈彁渚涢棶棰?;
+  const text = `闂绫诲瀷锛氬挩璇n\n鍥炲1锛氭偍濂斤紝鍏充簬鈥?{q}鈥濇垜浠凡鏀跺埌銆俓n\n鍥炲2锛氬凡鎸夌煡璇嗗簱妫€绱紝璇峰厛鎸夋祦绋嬫帓鏌ャ€俓n\n鍥炲3锛氬浠嶅紓甯革紝璇疯ˉ鍏呮埅鍥惧拰璐﹀彿瑙掕壊銆俙;
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream({

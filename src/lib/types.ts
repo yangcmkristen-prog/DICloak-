@@ -1,4 +1,4 @@
-﻿export type Role = "user" | "assistant";
+export type Role = "user" | "assistant";
 export interface ChatTurn { role: Role; content: string }
 export interface Conversation { id: string; name: string; messages: ChatTurn[]; createdAt: number; updatedAt: number }
 export interface KnowledgeBase {

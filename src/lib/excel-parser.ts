@@ -1,4 +1,4 @@
-﻿import * as XLSX from "xlsx";
+import * as XLSX from "xlsx";
 import { KnowledgeBase } from "@/lib/types";
 
 export async function parseKnowledgeWorkbook(file: File, current: KnowledgeBase): Promise<KnowledgeBase> {
@@ -13,7 +13,7 @@ export async function parseKnowledgeWorkbook(file: File, current: KnowledgeBase)
     if (lower === "troubleshooting") next.troubleshootingItems = [...next.troubleshootingItems, ...rows];
     if (lower === "out_of_scope") next.outOfScopeItems = [...next.outOfScopeItems, ...rows];
     if (lower === "mapping") next.mappingItems = [...next.mappingItems, ...rows];
-    if (lower === "function_knowledge" || lower === "功能知识库") next.functionKnowledge = [...next.functionKnowledge, ...rows];
+    if (lower === "function_knowledge" || lower === "鍔熻兘鐭ヨ瘑搴?) next.functionKnowledge = [...next.functionKnowledge, ...rows];
     if (lower === "term" || lower === "sheet1") next.termItems = [...next.termItems, ...rows];
   }
   return next;

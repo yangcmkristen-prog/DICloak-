@@ -1,4 +1,4 @@
-﻿import { Conversation, KnowledgeBase } from "@/lib/types";
+import { Conversation, KnowledgeBase } from "@/lib/types";
 export const STORAGE_KEYS = {
   conversations: "diclok_conversations",
   knowledge: "diclok_knowledge",
@@ -6,15 +6,13 @@ export const STORAGE_KEYS = {
   currentConversation: "diclok_current_conversation"
 } as const;
 
-export const DEFAULT_SYSTEM_PROMPT = `你是 DICloak 客服助手。
-输出格式：
-问题类型
+export const DEFAULT_SYSTEM_PROMPT = `浣犳槸 DICloak 瀹㈡湇鍔╂墜銆?杈撳嚭鏍煎紡锛?闂绫诲瀷
 
-回复1
+鍥炲1
 
-回复2
+鍥炲2
 
-回复3`;
+鍥炲3`;
 
 const EMPTY_KB: KnowledgeBase = { faqItems: [], troubleshootingItems: [], outOfScopeItems: [], mappingItems: [], functionKnowledge: [], termItems: [], lastUpdated: 0 };
 
