@@ -1,0 +1,16 @@
+﻿*{box-sizing:border-box} body{margin:0;font-family:Arial,"Microsoft YaHei",sans-serif;background:#f4f6fb}
+.topbar{height:64px;display:flex;align-items:center;gap:10px;padding:0 16px;background:#fff;border-bottom:1px solid #e5e7eb}
+.badge{background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:3px 10px;font-size:12px}
+.content-grid{display:grid;grid-template-columns:320px 1fr;gap:12px;padding:12px;height:calc(100vh - 64px)}
+.sidebar,.main-panel{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+.sidebar-header{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #e5e7eb}
+.conversation-items{padding:10px}.conv-item{border:1px solid #e5e7eb;border-radius:10px;padding:8px;margin-bottom:8px}.conv-item.active{border-color:#2563eb;background:#eff6ff}
+.conv-name{width:100%;text-align:left;border:0;background:none;font-weight:600}.conv-actions{display:flex;gap:6px;margin-top:6px}
+.tabs{display:flex;gap:8px;padding:10px;border-bottom:1px solid #e5e7eb}.tabs button.active{background:#2563eb;color:#fff}
+.chat-area{display:grid;grid-template-rows:1fr auto auto;height:100%}.message-list{overflow:auto;padding:12px}
+.msg{max-width:85%;padding:10px;border-radius:10px;margin-bottom:8px;white-space:pre-wrap}.msg.user{margin-left:auto;background:#dbeafe}.msg.assistant{background:#f3f4f6}
+.composer{display:flex;gap:8px;padding:10px;border-top:1px solid #e5e7eb}.composer textarea{flex:1}
+.reply-cards{padding:10px;border-top:1px solid #e5e7eb;background:#fafafa;max-height:280px;overflow:auto}.reply-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin-bottom:8px}
+.reply-head{display:flex;justify-content:space-between;align-items:center}
+.panel-stack{padding:12px;display:grid;gap:12px}.panel{border:1px solid #e5e7eb;border-radius:10px;padding:12px}
+.panel textarea,.panel input{width:100%}.kb-status{padding-left:18px}
